@@ -1,5 +1,7 @@
 import React from "react"; //ES6 moduals, imported React
 import { createRoot } from 'react-dom/client'; //react 18 syntax before it was reactDOM
+import App from './App';
+import './index.css';
 
 //need to capitalise first letter of the name of the function
 function Greeting() {
@@ -42,6 +44,8 @@ const simple = ( //if appended, it will show an object, because jsx makes an obj
   </div>
 )
 
+
+
 // document.getElementById('root').append(JSON.stringify(simple))
 // getting JSON object
 
@@ -52,9 +56,11 @@ const root = createRoot(container)
 
 root.render(
   <div>
+    
     <Greeting /> 
     <Navi/>
     <List/>
+    <App/>
   </div>
   // simple // var render
   );
