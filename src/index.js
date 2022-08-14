@@ -3,7 +3,9 @@ import { createRoot } from "react-dom/client"; //react 18 syntax before it was r
 import App from "./App";
 import "./index.css";
 import Hours from "./components/Hours";
-import CatContacts from "./components/catContactCard.js/CatContacts";
+import CatContacts from "./components/catContactCard/CatContacts";
+import Jokes from "./components/challenge3/Jokes";
+
 
 //need to capitalise first letter of the name of the function
 function Greeting() {
@@ -72,7 +74,9 @@ root.render(
     <Simple/>
     <List />
     <App />
+    
     <div className="cats"><CatContacts/></div>
+    <div className="joke"><Jokes/></div>
     
   </div>
   // simple // var render

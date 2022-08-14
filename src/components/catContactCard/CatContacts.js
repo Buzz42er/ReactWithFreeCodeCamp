@@ -1,26 +1,31 @@
 import React from 'react'
+import './cats.css'
 import ContactCard from './ContactCard'
-import pumpkin from '"./catsImg/pumpkin.png"'
+import pumpkin from './catsImg/pumpkin.png'
+import felix from './catsImg/felix.jpg'
+import fluffykins from './catsImg/fluffykins.jpg'
+import whiskerson from './catsImg/mr-whiskerson.jpg'
+import './cats.css'
 
 const CatContacts = () => {
     return (
         <div className="contacts">
             <ContactCard 
-                img="./catsImg/mr-whiskerson.jpg"
+                img={whiskerson}
                 name="Mr. Whiskerson"
                 phone="(212) 555-1234"
                 mail="mr.whiskaz@catnap.meow"   
             />
             
             <ContactCard 
-                img="./catsImg/fluffykins.jpg"
+                img={fluffykins}
                 name="Fluffykins"
                 phone="(212) 555-2345"
                 mail="fluff@me.com"
             />
             
             <ContactCard 
-                img="./catsImg/felix.jpg"
+                img={felix}
                 name="Felix"
                 phone="(212) 555-4567"
                 mail="thecat@hotmail.com"
@@ -37,5 +42,7 @@ const CatContacts = () => {
     )
 
 }
+
+//quiz => https://scrimba.com/scrim/cMLrprhP
 
 export default CatContacts
