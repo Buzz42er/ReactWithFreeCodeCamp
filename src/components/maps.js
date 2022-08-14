@@ -56,3 +56,25 @@ export default function Colors() {
         </div>
     )
 }
+
+// 1. What does the `.map()` array method do?
+// Returns and gives you chance to edit every property with the same comand
+//..
+// Returns a new array. Whatever gets returned from the callback
+// function provided is placed at the same index in the new array.
+// Usually we take the items from the original array and modify them
+// in some way.
+
+// 2. What do we usually use `.map()` for in React?
+// To get data into repeting component atributes
+//..
+// Convert an array of raw data into an array of JSX elements
+// that can be displayed on the page.
+
+
+// 3. Why is using `.map()` better than just creating the components
+//    manually by typing them out?
+// Because this way you can pars a large amount of data into your project with just a couple lines of code
+//..
+//It makes our code more "self-sustaining" - not requiring
+//additional changes whenever the data changes.
