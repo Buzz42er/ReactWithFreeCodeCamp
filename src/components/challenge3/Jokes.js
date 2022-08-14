@@ -1,51 +1,68 @@
 import React from "react";
 import Joke from "./Joke";
 import './joke.css'
+import jokesData from "./jokesData";
 
 const ChallengeApp = () => {
+
+  const jokeElements = jokesData.map(joke => {
+      return <Joke 
+                  setup={joke.setup} 
+                  punchline={joke.punchline} 
+      />
+  })
   return (
-    <div className="alljokes">
-      <Joke 
+      <div>
+          {jokeElements}
+      </div>
+  )
+}
+
+//before
+// const ChallengeApp = () => {
+//   return (
+//     <div className="alljokes">
+//       <Joke 
        
-       punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
-                isPun={true}
-                upvotes={10}
-                downvotes={2}
-                comments={[{author: "", body: "", title: ""}, {}]}
-       />
+//        punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+//                 isPun={true}
+//                 upvotes={10}
+//                 downvotes={2}
+//                 comments={[{author: "", body: "", title: ""}, {}]}
+//        />
       
-      <Joke 
+//       <Joke 
          
-        setup ='whos there'
-        punchline ='not me'
-      />
+//         setup ='whos there'
+//         punchline ='not me'
+//       />
 
-      <Joke 
+//       <Joke 
        
-      setup ='i say hello'
-      punchline = 'yeah, wheel i dont'
-      />
+//       setup ='i say hello'
+//       punchline = 'yeah, wheel i dont'
+//       />
 
-      <Joke 
+//       <Joke 
        
-      setup ='horse wallks into a bar and the barmen asks'
-      punchline='why the long face'
-      />
+//       setup ='horse wallks into a bar and the barmen asks'
+//       punchline='why the long face'
+//       />
       
-      <Joke 
+//       <Joke 
        
-      setup = 'hello there sir, how may i help you? asked a little girl'
-      punchline ='kakav sir bogati, nisam ti ja mlikar mala'
-      />
+//       setup = 'hello there sir, how may i help you? asked a little girl'
+//       punchline ='kakav sir bogati, nisam ti ja mlikar mala'
+//       />
 
-      <Joke 
+//       <Joke 
        
-      setup ='i cant do this any more, they are so bad, glad this is the last one'
-      punchline ='oh yeah, wheel i didnt write those'
-      />
-    </div>
-  );
-};
+//       setup ='i cant do this any more, they are so bad, glad this is the last one'
+//       punchline ='oh yeah, wheel i didnt write those'
+//       />
+//     </div>
+//   );
+// };
 
 export default ChallengeApp;
 

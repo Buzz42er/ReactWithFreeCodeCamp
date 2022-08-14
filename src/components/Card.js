@@ -1,26 +1,36 @@
 import React from "react";
-import katie from "../Airbnb-Experiences/Katie-Zaferes.png";
 import star from "../Airbnb-Experiences/Star.png";
 
 const Card = (props) => {
   return (
     <div className="cards">
-      <img className="expImg" src={katie} alt="" />
+      <img className="expImg" src={props.photo} alt="" />
       <div className="score">
         <img className="starImg" src={star} alt="" />
-        <span>5.0</span>
-        <span className="grayText">(6) •</span>
-        <span className="grayText">USA</span>
+        <span>{props.scorder}</span>
+        <span className="grayText">({props.reviewCount}) •</span>
+        <span className="grayText">{props.country}</span>
       </div>
-      <p>Life lessons with Katie Zaferes</p>
+      <p>{props.course}</p>
       <p>
-        <strong>From $136</strong> / person
+        <strong>From {props.price}</strong> / {props.quantity}
       </p>
     </div>
   );
 };
 
 export default Card;
+
+/* 
+            <Card 
+                photo=''
+                score='5.0'
+                country='USA'
+                course='Life lessons with Katie Zaferes'
+                price='$136'
+                quantity='person'
+            /> 
+*/
 
 /*
 Challenge: Build the Card component

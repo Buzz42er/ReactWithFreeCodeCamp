@@ -5,7 +5,7 @@ import "./index.css";
 import Hours from "./components/Hours";
 import CatContacts from "./components/catContactCard/CatContacts";
 import Jokes from "./components/challenge3/Jokes";
-
+import Colors from "./components/maps";
 
 //need to capitalise first letter of the name of the function
 function Greeting() {
@@ -77,7 +77,7 @@ root.render(
     
     <div className="cats"><CatContacts/></div>
     <div className="joke"><Jokes/></div>
-    
+    <Colors/>
   </div>
   // simple // var render
 );
