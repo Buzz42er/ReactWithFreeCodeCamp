@@ -46,16 +46,18 @@ const paragraphs = pokemon.map(mon => `<p>${mon}</p>`)
 
 console.log(paragraphs)
 
-export default function Colors() {
+function Colors() {
     const colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"]
     return (
-        <div>
+        <div key={colors.id}>
             {colors.map((color) => {
                 return <h3>{color}</h3>   
             })}
         </div>
     )
 }
+
+export default Colors
 
 // 1. What does the `.map()` array method do?
 // Returns and gives you chance to edit every property with the same comand

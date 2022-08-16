@@ -7,6 +7,7 @@ const ChallengeApp = () => {
 
   const jokeElements = jokesData.map(joke => {
       return <Joke 
+                  key={joke.id}
                   setup={joke.setup} 
                   punchline={joke.punchline} 
       />

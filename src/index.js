@@ -6,6 +6,8 @@ import Hours from "./components/Hours";
 import CatContacts from "./components/catContactCard/CatContacts";
 import Jokes from "./components/challenge3/Jokes";
 import Colors from "./components/maps";
+import MemeApp from "./components/meme-generator/MemeApp";
+import PhotoShuffle from "./components/photoshuffle/PhotoShuffle";
 
 //need to capitalise first letter of the name of the function
 function Greeting() {
@@ -70,14 +72,15 @@ root.render(
   <div>
     <Greeting />
     <Navi />
-    <Hours/>
-    <Simple/>
+    <Hours />
+    <Simple />
     <List />
     <App />
-    
     <div className="cats"><CatContacts/></div>
     <div className="joke"><Jokes/></div>
     <Colors/>
+    <PhotoShuffle />
+    <MemeApp />
   </div>
   // simple // var render
 );
