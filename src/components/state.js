@@ -188,6 +188,10 @@ export default function StateHello() {
         <IsImportant />
         <No />
         <Counter />
+        <GoingOut />
+        <OutGoing />
+        <AddingItem/>
+        <ContactFavorite/>
       </div>
     );
 }
@@ -214,3 +218,123 @@ export default function StateHello() {
 //     ..
 //     Whenever you don't need the previous value of state to determine
 //     what the new value of state should be.
+
+function GoingOut() {
+    /**
+     * Challenge: Replace the if/else below with a ternary
+     * to determine the text that should display on the page
+     */
+
+    //  const isGoingOut = true
+    
+    //  let answer  // Use ternary here
+    //  if(isGoingOut === true) {
+    //      answer = "Yes"
+    //  } else {
+    //      answer = "No"
+    //  }
+
+    function answer(isGoingOut) {
+        return (isGoingOut ? 'Yes' : 'No')
+    }
+    //const isGoingOut = false
+    //let answer = isGoingOut ? "Yes" : "No"
+    
+    return (
+        <div className="state">
+            <h1 className="state--title">Do I feel like going out tonight?</h1>
+            <div className="state--value">
+                <h1>{answer(true)}</h1>
+                {/* {isGoingOut ? "Yes" : "No"} <--- this way you can write it in element directly */}
+            </div>
+        </div>
+    )
+}
+
+function OutGoing() {
+    /**
+     * Challenge: 
+     * - Initialize state for `isGoingOut` as a boolean
+     * - Make it so clicking the div.state--value flips that
+     *   boolean value (true -> false, false -> true)
+     * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
+     */
+    
+    const [isGoingOut, setIsGoingOut] = React.useState(true)
+    
+    const click = () => setIsGoingOut(prevState => !prevState )
+    
+    return (
+        <div className="state">
+            <h1 className="state--title">Do I feel like going out tonight?</h1>
+            <div className="state--value" onClick={click} >
+                <h1>{isGoingOut ? 'Yes' : 'No'}</h1>
+            </div>
+        </div>
+    )
+}
+
+function AddingItem() {
+    const [items, setItems] = React.useState(['item 1', 'item 2'])
+    const click = () => setItems(old => {
+        const newOne = `item ${old.length + 1}`
+        return [...old, newOne ]
+        })
+    console.log(items)
+    
+
+    const inParagraph = items.map(item => {
+                                            return <p 
+                                            key={item}>
+                                                {item}
+                                                </p>})
+    return (
+        <div>
+            <button onClick={click}>Add Item</button>
+            {inParagraph}
+        </div>
+    )
+}
+
+function ContactFavorite() {
+    const [contact, setContact] = React.useState({
+        firstName: "John",
+        lastName: "Doe",
+        phone: "+1 (719) 555-1212",
+        email: "itsmyrealname@example.com",
+        isFavorite: false
+    })
+    
+    let starIcon = contact.isFavorite ? "full-star.jpg" : "empty-star.jpg"
+    
+    function toggleFavorite() {
+        setContact(prevContact => {
+            return {
+                ...prevContact,
+                isFavorite: !prevContact.isFavorite
+            }
+        })
+    }
+    
+    return (
+        <main>
+            <article className="card">
+                <img src="./images/user.png" className="card--image" alt="" />
+                <div className="card--info">
+                    <img 
+                        src={require(`./stateImages/${starIcon}`)} 
+                        className="card--favorite"
+                        onClick={toggleFavorite}
+                        alt=''
+                    />
+                    <h2 className="card--name">
+                        {contact.firstName} {contact.lastName}
+                    </h2>
+                    <p className="card--contact">{contact.phone}</p>
+                    <p className="card--contact">{contact.email}</p>
+                </div>
+                
+            </article>
+        </main>
+    )
+}
