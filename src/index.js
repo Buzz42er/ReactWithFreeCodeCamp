@@ -8,6 +8,9 @@ import Jokes from "./components/challenge3/Jokes";
 import Colors from "./components/maps";
 import MemeApp from "./components/meme-generator/MemeApp";
 import PhotoShuffle from "./components/photoshuffle/PhotoShuffle";
+import AddItem from "./components/addItem/AddItem";
+import './components/state.js'
+import StateHello from "./components/state.js";
 
 //need to capitalise first letter of the name of the function
 function Greeting() {
@@ -79,8 +82,10 @@ root.render(
     <div className="cats"><CatContacts/></div>
     <div className="joke"><Jokes/></div>
     <Colors/>
-    <PhotoShuffle />
     <MemeApp />
+    <PhotoShuffle />
+    <AddItem />
+    <StateHello />
   </div>
   // simple // var render
 );
