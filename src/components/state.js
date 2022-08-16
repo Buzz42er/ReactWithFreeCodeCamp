@@ -130,6 +130,51 @@ export default function StateHello() {
         )
     }
 
+
+
+    function Counter() {
+        /**
+         * Challenge: Set up state to track our count (initial value is 0)
+         */
+         const [number, setCount] = React.useState(0)
+        
+            /**
+             * Note: if you ever need the old value of state
+             * to help you determine the new value of state,
+             * you should pass a callback function to your
+             * state setter function instead of using
+             * state directly. This callback function will
+             * receive the old value of state as its parameter,
+             * which you can then use to determine your new
+             * value of state.
+             */
+
+            //  function add() {
+            //     setCount(prevCount => prevCount + 1)
+            // }
+            //  function sub() {
+            //     setCount(prevCount => prevCount - 1)
+            // }
+
+         function add() {
+             let adding = number + 1
+             setCount(adding)
+         }
+         function subtract() {
+            let sub = number - 1
+            setCount(sub)
+        }
+        return (
+            <div className="counter">
+                <button className="counter--minus" onClick={subtract}>–</button>
+                <div className="counter--count">
+                    <h1>{number}</h1>
+                </div>
+                <button className="counter--plus" onClick={add}>+</button>
+            </div>
+        )
+    }
+//----------------------------------------------------------------------------------------------------
     const result = React.useState("Hello")
     console.log(result)
     return (
@@ -142,6 +187,30 @@ export default function StateHello() {
         </div>
         <IsImportant />
         <No />
+        <Counter />
       </div>
     );
 }
+
+
+// 1. You have 2 options for what you can pass in to a
+//    state setter function (e.g. `setCount`). What are they?
+//     new function, with old value, or just old value and rewrite it
+//     ..
+    
+//     a. Callback function - whatever the callback function 
+//        returns === new value of state
+//     b. New value of state (setCount(42))
+
+// 2. When would you want to pass the first option (from answer
+//    above) to the state setter function?
+//     when I need my old value in the future
+//     ..
+//     Whenever you DO need the previous value to determine the new value
+
+// 3. When would you want to pass the second option (from answer
+//    above) to the state setter function?
+//     when I need to change original value, for some reason
+//     ..
+//     Whenever you don't need the previous value of state to determine
+//     what the new value of state should be.
