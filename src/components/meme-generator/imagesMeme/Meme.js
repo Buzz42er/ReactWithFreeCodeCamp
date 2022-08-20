@@ -4,7 +4,7 @@ const Meme = (props) => {
 
   return (
   
-    <img className='meme' src={require(`./memesData.js${props.url}`)} alt="meme" />
+    <img className='meme' src='' alt="meme" />
   
   )
 }

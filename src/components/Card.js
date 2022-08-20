@@ -1,6 +1,7 @@
 import React from "react";
 import star from "../Airbnb-Experiences/Star.png";
 
+
 const Card = (props) => {
   return (
     <div className="cards">

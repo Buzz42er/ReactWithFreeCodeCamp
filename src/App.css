@@ -237,12 +237,13 @@ border-radius: nullpx;
 }
 
 .meme {
-  height: fit-content;
-  max-width: 70vh;
+  height: 50vh;
+  max-width: 50vh;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   margin: 40px;
   border-radius: 20px;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.514);
   
 }
 
